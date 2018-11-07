@@ -13,7 +13,7 @@ RUN --mount=target=. go build -o /out/repo-copy ./
 
 FROM gobuild-base AS containerd
 RUN apk add --no-cache btrfs-progs-dev
-ARG CONTAINERD_VERSION=f5ada9e3
+ARG CONTAINERD_VERSION=55420c95
 RUN git clone https://github.com/tonistiigi/containerd.git /go/src/github.com/containerd/containerd
 WORKDIR /go/src/github.com/containerd/containerd
 RUN git checkout -q "$CONTAINERD_VERSION" \
